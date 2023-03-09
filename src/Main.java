@@ -41,6 +41,16 @@ public class Main {
         return d;
     }
 
+    public static void showDayOfDelivery(int daysOfDelivery) {
+        if (daysOfDelivery == 1) {
+            System.out.println("Для доставки карты потребуется " + daysOfDelivery + " день.");
+        } else if (daysOfDelivery > 1) {
+            System.out.println("Для доставки карты потребуется " + daysOfDelivery + " дня.");
+        } else if (daysOfDelivery == 0) {
+            System.out.println("Доставки нет.");
+        }
+    }
+
     public static void main(String[] args) {
         task1();
         task2();
@@ -63,12 +73,8 @@ public class Main {
 
     public static void task3() {
         System.out.println("Task 3.");
-        int distance = 100;
+        int distance = 75;
         deliveryDays(distance);
-        if (deliveryDays(distance) > 0) {
-        System.out.println("Для доставки карты потребуется " + deliveryDays(distance) + " дня.");
-        } else if (deliveryDays(distance) == 0) {
-            System.out.println("Доставки нет.");
-        }
+        showDayOfDelivery(deliveryDays(distance));
     }
 }
