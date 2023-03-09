@@ -26,15 +26,32 @@ public class Main {
         }
     }
 
+    public static int deliveryDays(int distance) {
+        int d = 0;
+        if (distance <= 20) {
+            d = 1;
+        } else if (distance > 20 && distance <= 60) {
+            d = 2;
+        } else if (distance > 60 && distance <= 100) {
+            d = 4;
+        } else {
+            d  = 0;
+        }
+
+        return d;
+    }
+
     public static void main(String[] args) {
         task1();
         task2();
+        task3();
     }
 
 
     public static void task1() {
         System.out.println("Task 1.");
-        showsLeapYearOrNot(1900);
+        int year = 1900;
+        showsLeapYearOrNot(year);
     }
 
     public static void task2() {
@@ -42,5 +59,16 @@ public class Main {
         int deviceOS = 0;
         int deviceYeaOfIssue = 2023;
         checkDevice(deviceOS, deviceYeaOfIssue);
+    }
+
+    public static void task3() {
+        System.out.println("Task 3.");
+        int distance = 100;
+        deliveryDays(distance);
+        if (deliveryDays(distance) > 0) {
+        System.out.println("Для доставки карты потребуется " + deliveryDays(distance) + " дня.");
+        } else if (deliveryDays(distance) == 0) {
+            System.out.println("Доставки нет.");
+        }
     }
 }
